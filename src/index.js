@@ -3,12 +3,16 @@ import BootScene from './scenes/Boot/BootScene';
 
 const config = {
   type: Phaser.AUTO,
-  width: 500,
-  height: 500,
   title: 'Game',
+  width: 800,
+  height: 600,
   url: 'http://yourgame.com',
-  banner: {
-    hidePhaser: true
+  physics: {
+    default: 'arcade',
+    arcade: {
+      gravity: { y: 300 },
+      debug: false
+    }
   },
   scene: [BootScene]
 };
@@ -19,4 +23,4 @@ class AppGame extends Phaser.Game {
   }
 }
 
-let game = new AppGame(config);
+const game = new AppGame(config);
